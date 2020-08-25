@@ -1,19 +1,8 @@
+FROM quay.io/snehakpersistent/multi-arch-travis:ppc64le
+
+RUN apt-get install -y apache2 \
+  && service apache2 start
+
+ADD index.html /var/www/html
   
-FROM registry.access.redhat.com/ubi8/ubi
-
-RUN yum --disableplugin=subscription-manager -y module enable php:7.2 \
-  && yum --disableplugin=subscription-manager -y install httpd php \
-  && yum --disableplugin=subscription-manager clean all
-
-ADD index.php /var/www/html
-
-RUN sed -i 's/Listen 80/Listen 8080/' /etc/httpd/conf/httpd.conf \
-  && mkdir /run/php-fpm \
-  && chgrp -R 0 /var/log/httpd /var/run/httpd /run/php-fpm \
-  && chmod -R g=u /var/log/httpd /var/run/httpd /run/php-fpm
-  
-EXPOSE 8080
-
-USER 1001
-
-CMD php-fpm & httpd -D FOREGROUND
+EXPOSE 80
