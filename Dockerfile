@@ -1,11 +1,3 @@
-FROM quay.io/snehakpersistent/multi-arch-travis:latest
+FROM quay.io/snehakpersistent/multi-arch-travis:ppc64le
 
-RUN apt update -y \
-  && apt-get install -y apache2 \
-  && service apache2 start
-
-ADD index.html /var/www/html
-
-CMD [“/usr/sbin/httpd”,” -D”,” FOREGROUND”]
-
-EXPOSE 80
+CMD "ls"
