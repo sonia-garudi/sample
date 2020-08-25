@@ -2,7 +2,8 @@ FROM ppc64le/ubuntu:latest
 
 CMD "ls"
 
-RUN apt-get install -y apache2
+RUN  apt-get -y update \
+     && apt-get install -y apache2
 
 ADD index.html /var/www/html
 
