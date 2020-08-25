@@ -1,4 +1,4 @@
-FROM quay.io/snehakpersistent/multi-arch-travis:ppc64le
+FROM ppc64le/debian:latest
 
 CMD "ls"
 
