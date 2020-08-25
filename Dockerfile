@@ -1,8 +1,11 @@
-FROM ppc64le/debian:latest
+FROM quay.io/snehakpersistent/multi-arch-travis:latest
 
-RUN apt-get install -y apache2 \
+RUN apt update -y \
+  && apt-get install -y apache2 \
   && service apache2 start
 
 ADD index.html /var/www/html
-  
+
+CMD [“/usr/sbin/httpd”,” -D”,” FOREGROUND”]
+
 EXPOSE 80
