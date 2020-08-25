@@ -1,4 +1,4 @@
-FROM ppc64le/ubuntu:latest
+FROM ppc64le/debian:latest
 
 CMD "ls"
 
