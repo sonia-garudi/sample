@@ -3,6 +3,8 @@ FROM ppc64le/ubuntu:latest
 #FROM ppc64le/debian:latest
 #FROM quay.io/snehakpersistent/multi-arch-travis:ppc64le
 
+USER root
+
 RUN apt-get -y update \
   && apt-get install -y curl
 
