@@ -22,4 +22,6 @@ EXPOSE 8081
 
 RUN service apache2 start
 
+RUN curl http://localhost
+
 CMD sleep 2000s
