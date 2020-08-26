@@ -12,6 +12,8 @@ RUN export DEBIAN_FRONTEND="noninteractive" \
 
 ADD index.html /var/www/html
 
+RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
+
 EXPOSE 80
 
 RUN service apache2 start
