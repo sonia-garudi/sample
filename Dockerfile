@@ -6,4 +6,12 @@ FROM ppc64le/ubuntu:latest
 RUN apt-get -y update \
   && apt-get install -y curl
 
+RUN apt-get install -y apache2
+
+ADD index.html /var/www/html
+
+EXPOSE 80
+
+RUN service apache2 start
+
 CMD sleep 2000s
