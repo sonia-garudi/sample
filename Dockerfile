@@ -1,12 +1,4 @@
-FROM ppc64le/debian:latest
+#FROM ppc64le/debian:latest
+FROM quay.io/snehakpersistent/multi-arch-travis:ppc64le
 
-CMD "ls"
-
-RUN  apt-get -y update \
-     && apt-get install -y apache2
-
-ADD index.html /var/www/html
-
-RUN service apache2 start
-
-EXPOSE 80
+CMD chmod +x temp.sh && ./temp.sh
