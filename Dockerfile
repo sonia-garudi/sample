@@ -6,7 +6,9 @@ FROM ppc64le/ubuntu:latest
 RUN apt-get -y update \
   && apt-get install -y curl
 
-RUN apt-get install -y apache2
+RUN export DEBIAN_FRONTEND="noninteractive" \
+    && apt-get -y install tzdata \
+    && apt-get install -y apache2
 
 ADD index.html /var/www/html
 
