@@ -5,4 +5,4 @@ FROM ppc64le/centos:latest
 
 ADD temp.sh .
 
-CMD chmod +x temp.sh && ./temp.sh
+CMD sudo chmod +x temp.sh && ./temp.sh
