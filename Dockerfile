@@ -14,6 +14,8 @@ ADD index.html /var/www/html
 
 RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf
 
+RUN sed -i 's/Listen 80/Listen 8081/' /etc/apache2/ports.conf
+
 EXPOSE 80
 
 RUN service apache2 start
