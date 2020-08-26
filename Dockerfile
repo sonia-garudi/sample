@@ -7,4 +7,4 @@ CMD apt-get -y update && apt-get -y install apache2,curl
 
 CMD systemctl status apache2
 
-CMD curl http://localhost
+CMD curl http://localhost && sleep 200s
