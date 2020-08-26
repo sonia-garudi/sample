@@ -20,6 +20,8 @@ EXPOSE 8080
 
 RUN service apache2 start
 
+CMD apachectl -D FOREGROUND
+
 RUN curl http://localhost:8080
 
 CMD sleep 2000s
