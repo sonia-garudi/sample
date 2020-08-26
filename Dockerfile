@@ -18,6 +18,8 @@ RUN sed -i 's/Listen 80/Listen 8081/' /etc/apache2/ports.conf
 
 RUN sed -i 's/VirtualHost *:80/VirtualHost *:8081/' /etc/apache2/sites-enabled/000-default.conf
 
+RUN ln -sf /dev/stderr /var/log/apache2/error.log
+
 EXPOSE 8081
 
 RUN service apache2 start
