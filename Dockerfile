@@ -22,6 +22,8 @@ EXPOSE 8080
 
 RUN service apache2 start
 
-CMD /usr/sbin/apachectl status
+#CMD /usr/sbin/apachectl status
+
+CMD sleep 2000s
 
 RUN curl http://localhost:8080
