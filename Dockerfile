@@ -7,7 +7,7 @@ RUN apt-get -y update \
   && apt-get install -y curl
 
 RUN export DEBIAN_FRONTEND="noninteractive" \
-    && apt-get -y install tzdata \
+    && apt-get -y install tzdata w3m \
     && apt-get install -y apache2
 
 ADD index.html /var/www/html
