@@ -22,6 +22,6 @@ EXPOSE 8080
 
 #RUN service apache2 start
 
-ENTRYPOINT ["/usr/sbin/apachectl start", "curl http://localhost:8080"]
+ENTRYPOINT ["/usr/sbin/apachectl start"]
 
 #RUN curl http://localhost:8080
