@@ -20,8 +20,8 @@ RUN echo "ServerName localhost" >> /etc/apache2/apache2.conf \
 
 EXPOSE 8080
 
-RUN service apache2 start
+#RUN service apache2 start
 
-ENTRYPOINT ["/usr/sbin/apachectl"]
+ENTRYPOINT ["/usr/sbin/apachectl start", "curl http://localhost:8080"]
 
-RUN curl http://localhost:8080
+#RUN curl http://localhost:8080
