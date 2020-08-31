@@ -27,5 +27,3 @@ RUN service apache2 start
 CMD /usr/sbin/apache2ctl -DFOREGROUND
 
 RUN curl http://localhost:8080
-
-USER 1001
